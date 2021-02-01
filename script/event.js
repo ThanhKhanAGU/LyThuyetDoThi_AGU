@@ -140,60 +140,60 @@ document.addEventListener("keydown",(e)=>
     if((e.key=="p"||e.key=="P")&&e.altKey&&e.ctrlKey)
     { 
         play()
-    }
+    }else
     if((e.key=="n"||e.key=="N")&&e.altKey&&e.ctrlKey)
     { 
         num()
-    }
+    }else
     if((e.key=="d"||e.key=="D")&&e.altKey&&e.ctrlKey)
     { 
         dirline()
-    }
+    }else
     if((e.key=="S"||e.key=="s")&&e.altKey&&e.ctrlKey)
     { 
         saveTextAsFile();
         download();
-    }
+    }else
     if((e.key=="M"||e.key=="m")&&e.altKey&&e.ctrlKey)
     { 
         music()
-    }
+    }else
     if((e.key=='z'||e.key=='Z')&&e.ctrlKey)
     {
         Back()
-    }
+    }else
     if((e.key=='y'||e.key=='Y')&&e.ctrlKey)
     {
         after()
-    }
+    }else
     if((e.key=='F'||e.key=='f')&&e.altKey)
     {
         ButtonFord()
-    }
+    }else
     if((e.key=='D'||e.key=='d')&&e.altKey)
     {
         ButtonDijstra()
-    }
+    }else
     if((e.key=='s'||e.key=='S')&&e.altKey)
     {
         setting_show()
-    }
+    }else
     if((e.key=='P'||e.key=='P')&&e.altKey)
     {
         ButtonDraw()
-    }
+    }else
     if((e.key=='A'||e.key=='a'))
     {
         add() 
-    }
+    }else
     if((e.key=='d'||e.key=='D'))
     {
         del() 
-    }
+    }else
     if((e.key=='m'||e.key=='M'))
     {
         movepoint()
-    }
+    }else
     if((e.key=='s'||e.key=='S'))
     {
         setNumber()
