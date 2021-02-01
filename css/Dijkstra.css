@@ -1,0 +1,79 @@
+.Dijtool .hien
+{
+    border: black 1px solid;
+    display: inline-block;
+    border-radius: 5px ;
+    padding: 20px;
+    background-color: rgb(63, 114, 209);
+    color: white;
+    font-size: 25px;
+    text-align: center;    
+}
+.Dijtool
+{
+    z-index: 100;
+    overflow: auto;
+    position: fixed;
+    left: -320px;
+    top: 20%;
+    transition: left 0.75s;
+}
+option{
+    color: rgb(255, 255, 255);
+    background-color: rgb(5, 65, 133);
+    
+}
+.Dijtool:hover
+{
+    left: 0;
+}
+.Dijtool .chucnang
+{
+    display: inline-block;
+    border-radius: 5px ;
+    margin: auto 0;
+    font-size: 40px;
+    z-index: 70;
+    
+}
+.chucnang div{
+    background:rgb(60, 60, 255) ;
+    color: rgb(255, 255, 255);
+    margin: 30px 0;
+    padding: 5px;
+    font-size: 22px;
+    border-radius:0 0.5em 0.5em 0;
+}
+.Dijtool .hien *{
+    margin: 5px;
+    z-index: 50;
+    
+}
+#tu,#den{
+    width: 65px;
+    height: 30px;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+.Dijtool .hien button{
+    background-color: rgba(0, 0, 0, 0);
+    outline: none;
+    border: none;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    transition: font-size 0.5s;
+}
+.Dijtool .hien button:hover{
+    padding: 0;
+    margin: 0;
+    font-size: 44px;
+}
+.Dijtool .hien div{
+    background-color: rgb(48, 86, 156);
+    margin: 0;
+    text-align: center;
+    
+}

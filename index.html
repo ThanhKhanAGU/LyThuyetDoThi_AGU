@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<title>Home Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/Home_Page.css">
+	<link rel="icon" href="img/icon/TW.png">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<!-- Menu -->
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+		<div class="container-fluid">
+			<a href="#" class="navbar-brand">
+				<img src="img/Logo_TW_white.png" height="50">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto menu" id="menu">
+					<li class="nav-item ">
+						<a class="nav-link active" href="#slides">HOME</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#About">ABOUT</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#Team">TEAM</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="VeDoThi.html">DRAW</a>
+					</li>
+				</ul>
+
+				
+			</div>
+		</div>
+	</nav>
+	<!-- Img -->
+	<div id="slides" class="carousel slide" data-ride="carousel">
+		<ul class="carousel-indicators">
+			<li data-target="#slides" data-slide-to="0" class="active"></li>
+			<li data-target="#slides" data-slide-to="1"></li>
+			<li data-target="#slides" data-slide-to="2"></li>
+			<li data-target="#slides" data-slide-to="3"></li>
+		</ul>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="img/MyTeam.jpg" class="img-fluid">
+				<div class="carousel-caption">
+					<h1 class="display-2"><b>LÝ THUYẾT ĐỒ THỊ</b></h1>
+					<h3><b>Vẽ đồ thị & tìm đường đi ngắn nhất</b></h3>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="img/Background_3.png">
+			</div>
+			<div class="carousel-item">
+				<img src="img/Background_4.jpg">
+			</div>
+			<div class="carousel-item">
+				<img src="img/TW.gif">
+			</div>
+			
+
+			<a class="carousel-control-prev" href="#slides" data-slide="prev">
+	            <span class="carousel-control-prev-icon"></span>
+	        </a>
+	        <a class="carousel-control-next" href="#slides" data-slide="next">
+	            <span class="carousel-control-next-icon"></span>
+	        </a>
+		</div>
+	</div>
+
+	<hr class="my-2">
+	<br>
+	
+	<!-- logo trường -->
+	<div class="container-fluid">
+		<div class="row padding slideanim">
+			<div class="col-6">
+				<img src="img/Logo_agu.png" height="250" class="img-fluid logo_AGU1">
+			</div>
+			<div class="col-6">
+				<img src="img/dhqg.png" height="240" class="img-fluid logo_AGU2">
+			</div>
+		</div>
+	</div>
+
+	<!-- Welcom -->
+	<div class="container-fluid padding">
+		<div class="row welcom text-center slideanim">
+			<div class="col-12">
+				<h1 class="display-4" id="About"><br><b>WELCOME TO OUR WEBSITE</b></h1>
+				<hr>
+			</div>
+		</div>
+	</div>
+
+	<!-- Giới thiệu Dijkstra -->
+	<div class="container-fluid padding">
+		<div class="row padding slideanim amdi" id="Dijkstra">
+			<div class="col-md-12 col-lg-6 text-justify">
+				<p>
+					<hr id="hr_GT1">
+					<h2><b>GIẢI THUẬT DIJKSTRA</b></h2>
+					<p>Thuật toán Dijkstra — giải bài toán nguồn đơn nếu tất cả các trọng số đều không âm. Thuật toán này có thể tính toán tất cả các đường đi ngắn nhất từ một đỉnh xuất phát cho trước s tới mọi đỉnh khác mà không làm tăng thời gian chạy.<br>Thuật toán Dijstra bình thường sẽ có độ phức tạp là O(n2 + m). Tuy nhiên ta có thể sử dụng kết hợp với cấu trúc heap, khi đó độ phức tạp sẽ là O((m + n)log(n)), nếu dùng Fibonacci Heap thì độ phức tạp giảm xuống còn O(m + nlogn). Trong đó m là số cạnh, n là số đỉnh của đồ thị đang xét.</p>
+				</p>
+			</div>
+			<div class="col-lg-6">
+				<img src="img/Dijkstra.jpg" class="img-fluid">
+			</div>
+		</div>
+	</div><br>
+
+	<!-- Giới thiệu Ford-Bellman -->
+	<div class="container-fluid padding">
+		<div class="row padding slideanim" id="Ford-Bellman">
+			<div class="col-lg-6">
+				<br>
+				<br>
+				<img src="img/Ford-Bellman.jpg" class="img-fluid">
+			</div>
+			<div class="col-md-12 col-lg-6 text-justify">
+				<p>
+					<hr id="hr_GT2">
+					<h2 class="text-left"><b>GIẢI THUẬT FORD-BELLMAN</b></h2>
+					<p>Thuật toán Bellman-Ford là một thuật toán tính các đường đi ngắn nhất nguồn đơn trong một đồ thị có hướng có trọng số (trong đó một số cung có thể có trọng số âm). Thuật toán Dijkstra giải cùng bài toán này tuy nhiên Dijkstra có thời gian chạy nhanh hơn, đơn giản là đòi hỏi trọng số của các cung phải có giá trị không âm.<br>Thuật toán Bellman-Ford chạy trong thời gian O(V.E), trong đó V là số đỉnh và E là số cung của đồ thị.</p>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<hr class="my-2">
+	<!-- Welcom team -->
+	<div class="container-fluid padding" id="Team">
+		<div class="row welcom text-center slideanim">
+			<div class="col-12">
+				<h1 class="display-5"><br><b>WELCOME OUR TEAM TW MEMBERS</b></h1>
+			</div>
+		</div>
+	</div>
+
+	<!-- Team lập trình -->
+	<button class="fun slideanimX" data-toggle="collapse" data-target="#Team_LT">Team Lập Trình</button>
+	<div class="collapse" id="Team_LT">
+		<div class="container-fluid">
+			<div class="row padding slideanim">
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Khan.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Trần Thanh Khan</h4>
+							<p class="card-text">Vai trò: Chủ tịch kiêm sai vặt</p>
+							<a href="/info/Khan.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Hang.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Nguyễn thị Lệ Hằng</h4>
+							<p class="card-text">Vai trò: Trưởng phòng tài chính - nghèo</p>
+							<a href="/info/Hang.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Linh.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Bùi Nhật Trường Linh</h4>
+							<p class="card-text">Vai trò: Giám đốc ăn hại</p>
+							<a href="/info/Linh.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Y.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Trương Như Ý</h4>
+							<p class="card-text">Vai trò: Thư ký giám đốc ăn hại</p>
+							<a href="/info/Y.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Team Đồ Họa -->
+	<button class="fun slideanimX" data-toggle="collapse" data-target="#Team_DH">Team Đồ Họa</button>
+	<div class="collapse" id="Team_DH">
+		<div class="container-fluid">
+			<div class="row padding slideanim">
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="card">
+						<img src="img/Chuong.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Nguyễn Hoàng Chương</h4>
+							<p class="card-text">Vai trò: Trợ lý chủ tịch và các bạn còn lại</p>
+							<a href="/info/Chuong.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="card">
+						<img src="img/Cam.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Nguyễn Ngọc Cẩm</h4>
+							<p class="card-text">Vai trò: Cố vấn luật</p>
+							<a href="/info/Cam.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="card">
+						<img src="img/Cuong.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Trần Lê Minh Cường</h4>
+							<p class="card-text">Vai trò: Đội trưởng bảo an</p>
+							<a href="/info/Cuong.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Team Dijkstra -->
+	<button class="fun slideanimX" data-toggle="collapse" data-target="#Team_Dijkstra">Team Giải Thuật Dijkstra</button>
+	<div class="collapse" id="Team_Dijkstra">
+		<div class="container-fluid">
+			<div class="row padding slideanim">
+				<div class="col-12 col-md-6">
+					<div class="card">
+						<img src="img/Oai.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Nguyễn Hữu Oai</h4>
+							<p class="card-text">Vai trò: Trưởng phòng hành chánh</p>
+							<a href="/info/Oai.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card">
+						<img src="img/Loan.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Phạm Lê Ngọc Loan</h4>
+							<p class="card-text">Vai trò: Trợ lý của trưởng phòng hành chánh</p>
+							<a href="/info/Loan.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Team Ford-Bellman -->
+	<button class="fun slideanimX" data-toggle="collapse" data-target="#Team_Ford">Team Giải Thuật Ford-Bellman</button>
+	<div class="collapse" id="Team_Ford">
+		<div class="container-fluid">
+			<div class="row padding slideanim">
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Coi_Gom.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Còi và Gồm</h4>
+							<p class="card-text">Vai trò: Trưởng phòng Marketing</p>
+							<a href="#" class="btn btn-outline-secondary" id="HS" target="_blank">Meo Meo - Gâu Gâu</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Anh.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Nguyễn Thị Huỳnh Anh</h4>
+							<p class="card-text">Vai trò: Trợ lý trưởng phòng Marketing - mập</p>
+							<a href="/info/Anh.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Huong.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Nguyễn Mai Hương</h4>
+							<p class="card-text">Vai trò: Trợ lý trưởng phòng Marketing - quá mập</p>
+							<a href="/info/Huong.html" class="btn btn-outline-secondary" id="HS" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="card">
+						<img src="img/Line.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4 class="card-title text-center">Mên Chanh Tha Hao Đa Line</h4>
+							<p class="card-text">Vai trò: Tiêu thư con chủ tịch</p>
+							<a href="/info/Line.html" class="btn btn-outline-secondary" id="HS" type="margin: 0px;" target="_blank">See profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 text-center slideanim">
+					<h3><br>Sinh Viên AGU</h3>
+					<h4>Khoa Công Nghệ Thông Tin</h4>
+				</div>
+				<div class="col-12 text-center">
+					<hr class="light-100">
+					<h6><img src="img/Logo_TW_ngang_White.png" height="200"></h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		$(document).ready(function(){
+			$(window).scroll(function(){
+				$(".slideanim").each(function(){
+					var pos = $(this).offset().top;
+					var wintop = $(window).scrollTop();
+						if(pos<wintop+500){
+							$(this).addClass("slidee");
+					}
+				});
+			});
+		});
+
+		$(document).ready(function(){
+			$(window).scroll(function(){
+				$(".slideanimX").each(function(){
+					var pos = $(this).offset().top;
+					var wintop = $(window).scrollTop();
+						if(pos<wintop+500){
+							$(this).addClass("slideX");
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<title>Draw</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap4/js/bootstrap.js">
+	<link rel="stylesheet" href="bootstrap4/js/bootstrap.min.js">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="icon" href="img/icon/TW.png">
+	<!-- Chèn Css -->
+	<link rel="stylesheet" type="text/css" href="css/Body.css">
+	<link rel="stylesheet" type="text/css" href="css/Menu.css">
+	<link rel="stylesheet" type="text/css" href="css/Menu_tool.css">
+	<link rel="stylesheet" type="text/css" href="css/Graphing.css">
+	<link rel="stylesheet" type="text/css" href="css/Dijkstra.css">
+	<link rel="stylesheet" type="text/css" href="css/div.css">
+	<link rel="stylesheet" type="text/css" href="css/Footer.css">
+	<link rel="stylesheet" type="text/css" href="css/setting.css">
+</head>
+
+<body onresize="resize()" onload="ButtonDraw()">
+	<div class="botbutton">
+		<span>Chức năng</span> <input type="text" name="" id="textmenu">
+		<button onmouseenter="movein()" id="btnHuong" onclick="dirline()" title="Hiển Thị có hướng hay không"> DIRECTION </button>
+		<button onmouseenter="movein()" id="btnTrongso" onclick="num()" title="Hiển Thị trọng số hay không" > NUMBER </button>
+		<button onmouseenter="movein()" id="btnAm" onclick=" music()" title="Tắt hoặc mở âm thanh">
+		</button>
+		<button onmouseenter="movein()" id="btnFly" onclick=" play()" title="Cho phép di chuyển tự do">
+		</button>
+		<button onmouseenter="movein()" id="btnset" onclick=" setting_show()" title="Cài dặt giao diện">⚙️
+		</button>
+	</div>
+	<input type="file" id="fileToLoad" accept=".tw12" style="position: fixed; bottom:0px; right: -320px;z-index: 1000;"/>
+	<div class="rightbutton" style="z-index: 99999999">
+		<button onmouseenter="movein()"  onclick="ButtonDraw()" title="Giao diện vẽ Đồ Thị"><i class="fa fa-angle-double-left"></i> DRAW </button>
+		<button onmouseenter="movein()" onclick="ButtonDijstra()" title="Thuật Toán Dijkstra"><i class="fa fa-angle-double-left"></i> DIJKSTRA </button>
+		<button onmouseenter="movein()" onclick="ButtonFord()" title="Thuật Toán Ford-Bellman"><i class="fa fa-angle-double-left"></i> FORD BELLMAN </button>
+		<br>
+		<button onmouseenter="movein()" onclick="saveTextAsFile()"><i class='fas fa-save' ></i> SAVE FILE</button>
+		<button onmouseenter="movein()" onclick="download()"><i class='far fa-save' ></i> SAVE DRAW </button>
+	</div>
+	
+	<!---------------------------------------------------------------------------------------- div -->
+	<div id="VeDoThi">
+		<!-------------------------------------------------- Menu -->
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container-fluid">
+				<a href="#" class="navbar-brand">
+					<img src="img/Logo_TW_white.png" height="50">
+				</a>
+				<a href="#" class="navbar-brand">
+					<img src="img/Logo_agu.png" height="60">
+				</a>
+				<a href="#" class="navbar-brand">
+					<img src="img/dhqg.png" height="50">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item" id="Home">
+							<a class="nav-link" href="index.html">HOME</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="index.html#About">ABOUT</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="index.html#Team">TEAM</a>
+						</li>
+						<li class="nav-item" id="Menu_Graphing">
+							<a class="nav-link active" href="#" id="Hien1">DRAW</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<hr class="my-2">
+		<!-------------------------------------------------- Graphing -->
+			<div id="Draw_show" class="div">				
+				<div class="leftbutton">
+					<button onclick="add() " onmouseenter="movein()">ADD  <i class='fas fa-paint-brush'></i></button>
+					<button onclick="del()" onmouseenter="movein()">DELETE <i class='far fa-trash-alt'></i></button>
+					<button onclick="movepoint()" onmouseenter="movein()">MOVE <i class='fas fa-arrows-alt'></i></button>
+					<button onclick="setNumber()" onmouseenter="movein()">SET <i class='fas fa-tools'></i> </button>
+				</div>
+				<div id = "draw">
+					<div class="Graphing" id="myCavas">
+						<canvas id="drawCanvas" width="700" height="600"></canvas>
+					</div>
+				</div>
+
+				<div class="matrix_Graphing" id="matrixroot">
+					<div class="matrix_Graphing_1" id="matrix1">
+						<canvas id="MatrixCanvas" width="400" height="400"></canvas></div>
+					<div class="matrix_Graphing_2" id="matrix2">
+						<textarea id="Matrixline" rows="7" cols="20" ></textarea>
+					</div>
+				</div>
+			</div>
+	
+		
+		<!--------------------------------------------------- Dijkstra -->
+
+			<div id="Dijstra_show" class="div" style="display:none;">
+				<div class="Dijtool">
+					<div class="hien">						
+						<span>Từ</span>
+						<select id="tu">
+							<option class="op" ></option>
+							<option class="op" value=""  >2</option>
+							<option class="op" value=""  >3</option>
+							<option class="op" value=""  >4</option>
+							<option class="op" value=""  >5</option>
+							<option class="op" value=""  >6</option>
+							<option class="op" value=""  >7</option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+							<option class="op" value=""  ></option>
+						</select>
+						<span>Đến</span>
+						<select id="den">
+							 <option class="op" value=""  >All</option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+							 <option class="op" value=""  ></option>
+						</select>
+						<br>
+						Tốc Độ <input type="range" id="time" min="0" max="10000" value="5000" onchange="k_nhonhat()">
+						<div>
+							<button onclick="Buoct()" onmouseenter="hov()">⏪</button>
+							<button id="btnrun" onmouseenter="hov()"onclick="runDij()">▶️</button>
+							<button onclick="Buocf()"onmouseenter="hov()">⏩</button>
+						</div>
+					</div>
+					<div class="chucnang">
+						<div id="showTu">
+							
+						</div>
+						<div id="showDen">
+							
+						</div>
+					</div>
+					
+				</div>
+				<div id = "draw">
+					<div class="Graphing" id="myCavas">
+						<canvas id="backgroud" width="700" height="590" onclick="Buocf()"></canvas>
+					</div>
+				</div>
+				<div class="matrix_Graphing" id="matrixroot">
+					<div class="matrix_Graphing_1" id="matrix11">
+						<canvas id="MatrixCanvasDijstra" width="400" height="300"></canvas></div>
+					<div class="matrix_Graphing_2" id="matrix22">
+						<canvas id="dijstraCanvas" width="700" height="600"></canvas>
+						
+					</div>
+				</div>
+				<div id="Dijstraoutput">
+					<div id="Dijstracmd"></div>
+				</div>
+			</div>
+			<div class="setting" id="set" >
+				<h3>CÀI ĐẶT</h3>
+				<div id="set_infor">
+				<div id="menu_tool">
+					<button id="btnPoint" onclick="btnsetpoint()" style="background: #0f85f5;">POINT</button>
+					<button id="btnLine" onclick="btnsetline()">LINE</button>
+					<button id="btnInfor" onclick="btnsetinfor()">INFOR</button>
+					<button id="btnHelp" onclick="btnsethelp()">HELP</button>
+				</div>
+			<div id="tool_point">
+				<div class="khung"><span class="demuc"> Kích Thước </span><input id="input_sizePoint" type="range" min="5" max="50" class="slider" value="20"/></div>
+				<div class="khung"><span class="demuc"> Đồ Dày Viền </span><input id="input_lineWidth"type="range" min="1" max="10" class="slider" value="3"/></div>
+
+				<div class="khung"><span class="demuc"> Màu Viền </span><input id="input_colorBoderPoint" type="color" value="#000000" title="Màu Viền"/></div>
+				<div class="khung"><span class="demuc"> Màu Nền </span><input id="input_colorBackgroundPoint" type="color" value="#ffffff" /></div>
+				<div class="khung"><span class="demuc"> Màu Chữ </span><input id="input_colorText" type="color" value="#ff0000" /></div>
+				<div class="khung"><span class="demuc"> Font Chữ </span><input id="input_font" type="text" value="Comic Sans MS" /></div>
+			</div>
+			<div id="tool_line"  style="display: none;" >
+				<div class="khung"><span class="demuc"> Kích Thước Đường</span><input id="input_lineSize" type="range" min="1" max="10" class="slider" value="1"/></div>
+				<div class="khung"><span class="demuc"> Kích Thước Chữ</span><input id="input_SizeNumber" type="range" min="5" max="50" class="slider" value="20"/></div>
+
+				<div class="khung"><span class="demuc"> Màu Đường </span><input id="input_lineColor" type="color" value="#000000" title="Màu Viền"/> </div>
+				<div class="khung"><span class="demuc"> Màu Mũi Tên </span><input id="input_lineArrow" type="color" value="#000000" title="Màu Viền"/></div>
+				<div class="khung"><span class="demuc"> Màu Chữ </span><input id="input_lineTextColor" type="color" value="#000000" title="Màu Viền"/></div>
+
+			</div>
+			<div id="tool_infor"  style="display: none;" >
+			<b>Thông Tin</b>
+			<p>
+				&emsp;Sản phẩm được viết bằng Javascript.<br>
+				&emsp;Sản phẩm là sự sáng tạo, của cả tập thể.<br>
+				&emsp;Mọi chi tiết thắc mắc xin vui lòng liên hệ các thành viên có liên quan.<br>
+				&emsp;(Đây là sản phẩm đầu tiên của nhóm nếu có sai sót xin vui lòng bỏ qua)</br>
+			</p>
+			</div>
+			<div id="tool_help"  style="display: none;" >
+				<p>
+					<b>Phím Tắt: </b><br>
+					&emsp; Ctrl+Alt+D ⇨ Tắt mở Đồ thị có hướng<br>
+					&emsp; Ctrl+Alt+P ⇨ Tắt mở Đồ thị di chuyển<br>
+					&emsp; Ctrl+Alt+N ⇨ Tắt mở Đồ thị có trọng số<br>
+					&emsp; Ctrl+Alt+M ⇨ Tắt mở Âm Thanh<br>
+					&emsp; Ctrl+Z ⇨ Trở về bước trước đó<br>
+					&emsp; Ctrl+Y ⇨ Đi tới bước sau đó<br>
+					&emsp; Alt+S ⇨ Chế độ Cài Đặt<br>
+					&emsp; Alt+P ⇨ Chế độ vẽ đồ thị<br>
+					&emsp; &emsp; A ⇨ Thêm điểm hoặc đường<br>
+					&emsp; &emsp; D ⇨ Xóa điểm hoặc đường<br>
+					&emsp; &emsp; M ⇨ Di chuyển điểm<br>
+					&emsp; &emsp; S ⇨ Thay đổi thông tin điểm hoặc đường<br>
+					&emsp; Alt+D ⇨ Chạy thuật toán <i>Dijkstra</i><br>
+					&emsp; Alt+F ⇨ Chạy thuật toán <i>Ford-Bellman</i><br>
+					&emsp; Alt+Ctrl+S ⇨ Lưu file Đồ thị<br>
+
+				</p>
+			</div>
+
+				   
+		
+				</div>
+				<canvas id="show_demo" width="100" height="100">
+					
+				</canvas>
+				
+				<button class="button" onclick="defaul()">Mặc Định</button>
+				<br>
+				<button class="button" onclick="exiu()">Áp Dụng </button>
+				
+				</div>
+			</div>
+			
+		<footer>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 text-center">
+						<h3><br>Sinh Viên AGU</h3>
+						<h4>Khoa Công Nghệ Thông Tin</h4>
+					</div>
+					<div class="col-12 text-center">
+						<hr class="light-100">
+						<h6><img src="img/Logo_TW_ngang_White.png" height="100"></h6>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<!---------------------------------------------------------------------------------------- kết thúc div -->
+
+</body>
+<script src="script/init.js">/* KHỞI TẠO CÁC THUỘC TÍNH CHUNG */</script> 
+<script src="script/classPoint.js">/* KHỞI TẠO CLASS POINT*/</script>
+<script src="script/classLine.js">/* KHỞI TẠO CLASS LINE*/</script>
+<script src="script/data.js">/* KHỞI TẠO DỮ LIỆU */</script>
+<script src="script/draw.js">/*VẼ LẠI DỮ LIỆU*/</script>
+<script src="script/dijstra.js">/*VẼ LẠI DỮ LIỆU*/</script>
+<script src="script/event.js">/*BẮT SỰ KIỆN VÀ XỬ LÝ*/</script>
+<script src="script/setting.js"></script>
+</html>

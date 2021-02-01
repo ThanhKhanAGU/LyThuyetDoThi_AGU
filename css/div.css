@@ -1,0 +1,104 @@
+.div{
+	border:1px solid black;
+}
+
+#draw{
+	
+	min-width: 710px;
+	width: 60%;
+	display: inline-block;
+	overflow: auto;
+	margin: 0 auto;
+	
+}
+
+#matrixroot {
+	
+	min-width: 420px;
+	width: 35%;
+	display: inline-block;
+	overflow: auto;
+	margin: 0 auto;
+}
+
+#myCavas{
+	width: 700px;
+	height: 600px;
+	margin: 0 auto;
+
+}
+
+#matrix1{
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	border-radius: 0.5em;
+}
+
+#matrix2{
+	width: 400px;
+	height: 200px;
+	margin: 0 auto;
+	
+}
+#Matrixline{
+	height: 100%;
+	width: 100%;
+	padding: 30px;
+	padding-top: 2px;
+	
+	
+}
+#matrix11
+{
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+	border-radius: 0.5em;
+	
+}
+#matrix22
+{
+	width: 400px;
+	height: 300px;
+	
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0);
+}
+#dijstraoutput
+{
+	height: 120px;
+	width: 400px;
+}
+#backgroud
+{
+	background-color: rgb(76, 137, 218);
+	
+	border-radius: 1em;
+	border: 3px solid white;
+}
+#dijstraCanvas{
+	height: 298px;
+	width: 400px;
+	background-color: #ffffff;
+	border-radius: 0.5rem;
+	border: 2px solid black;
+}
+#Dijstraoutput
+{
+	padding: 10px;
+	border: 1px solid black;
+	height: 150px;
+	overflow: scroll;
+}
+#Dijstracmd{
+	padding: 5px;
+	width: 100%;
+	min-height: 5rem;
+	background-color: cornflowerblue;
+	position: relative;
+	z-index: 50;
+	text-shadow: 1px 2px 5px black;
+	color: snow;
+
+}

@@ -1,0 +1,37 @@
+
+#Menu_Tool ul li {
+	margin-right: 1.3em;
+}
+
+@media (max-width: 1200px){
+
+		#Menu_Tool ul li {
+		margin-right: 0.5em;
+	}
+}
+
+#Menu_Tool ul li button {
+	width: 2em;
+}
+
+#textmenu {
+	height: 1.5em;
+	line-height: 1.5em;
+	width: 210px;
+}
+
+#logoleft {
+	position: absolute;
+	top: 0.3em;
+	right: 0.1em;
+}
+
+#logoright {
+	position: absolute;
+	top: 0.3em;
+	left: 0.1em;
+}
+
+label{
+	color: white;
+}
